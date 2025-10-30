@@ -36,6 +36,15 @@ class Solution(object):
            - When a recursive call finishes, control returns to the previous call,
              which still has 'node' pointing to the parent.
            - This is why we automatically move back to root to then explore right subtree.
+
+        During an inorder traversal, the recursion proceeds down the left subtree until it reaches a node with no left child. 
+        Each recursive call pauses execution at the line where explore(node.left) is invoked and resumes only after that recursive 
+        call returns. Once a leaf node’s left child is None, the call returns, and execution continues in the parent call — 
+        first recording the current node’s value, then exploring the right subtree.
+
+        As each subtree finishes, its corresponding recursive call completes and returns control to its parent. 
+        This cascading sequence of returns continues upward until it eventually reaches the root node. Once back at the root 
+        (after the entire left subtree has been processed), the traversal continues with the right subtree in the same recursive manner.
         """
 
         traversal = []
