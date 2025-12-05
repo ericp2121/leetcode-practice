@@ -11,7 +11,6 @@ class Solution(object):
             # need to do -1 so it does not calculate left sum with entire array 
             leftSum += nums[i]
             rightSum = sum(nums) - leftSum
-            print('checking right ',rightSum, ' left sum ', leftSum)
             checkSum = leftSum - rightSum
 
             if checkSum%2 == 0:
